@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>教育クイズ</title>
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+  <div class="container">
+    <h1>教育内容クイズ</h1>
+
+    <div id="settings">
+      <label>出題範囲：<br/>
+        <input type="number" id="start" min="1" max="35" value="1"> ～
+        <input type="number" id="end" min="1" max="35" value="35">
+      </label><br/>
+      <label>出題順：
+        <select id="mode">
+          <option value="normal">順番</option>
+          <option value="random">ランダム</option>
+        </select>
+      </label><br/>
+      <button onclick="startQuiz()">開始</button>
+    </div>
+
+    <div id="quiz" class="hidden">
+      <p id="question"></p>
+      <input type="text" id="answer" placeholder="解答を入力" />
+      <button onclick="submitAnswer()">送信</button>
+      <button onclick="endQuiz()">終了</button>
+      <p id="feedback"></p>
+    </div>
+
+    <div id="result" class="hidden">
+      <h2>結果</h2>
+      <p id="summary"></p>
+      <div id="mistakes"></div>
+      <button onclick="location.reload()">もう一度</button>
+    </div>
+  </div>
+
+  <script src="script.js"></script>
+</body>
+</html>
